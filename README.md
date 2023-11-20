@@ -2,6 +2,11 @@
 ### Motivation 
 This datachallenge is based on the principle of the https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60 datachallenge. The aim is again to compare several methods for reconstructing sequences of Sea Surface Height (SSH) from partial satellite altimeter observations. As in the previous datachallenge, this datachellenge follows the framework of an OSSE (Observation System Simulation Experiment) where "Real" full SSH are from a numerical simulation with a realistic, high-resolution ocean circulation model: the reference simulation. However, this datachallenge proposes to use two separate reference simulations, each covering an entire year, whereas previous datachallenges only used a single simulation covering one year: a first simulation for training methods requiring learning from full SSH fields, and a second for evaluating different reconstruction methods over a full year. On the one hand, this approach enables a longer learning period: a whole year, whereas in previous data challenges, learning was limited to a few months to maintain an independent evaluation period within the same year. Secondly, SSH reconstructions can be validated on a full year of data, totally independent of the learning data, making it possible to study any seasonal effects in reconstruction performance.  
 
+### Reference simulations 
+The two references simulations used are the NATL60 and eNATL60 simulations both based on the NEMO model. Both simulations are run with a 1/60° horizontal resolution, and without tidal forcing. The simulations are here downgraded to the resolution of 1/8° and 1/20° for memory consideration. TODO: Ajouter des références pour les deux simulations.
+
+## Observations
+The SSH observations include simulations of seven altimeters data: Altika, CryoSat-2, H2ag, H2b, Jason 3, Sentinel-3a, and Sentinel-3b. This nadir altimeters constellation was operating during the 20---20-- period. No observation error is considered in this challenge.
 
 ### Data sequence and use
 
