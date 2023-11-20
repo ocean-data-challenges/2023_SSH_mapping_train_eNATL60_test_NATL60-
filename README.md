@@ -10,7 +10,7 @@ The two references simulations used are the NATL60 and eNATL60 simulations both 
 
 ## Observations
 
-The SSH observations include simulations of seven altimeters data: Altika, CryoSat-2, HaiYang-2Ag, HaiYang-2B, Jason 3, Sentinel-3a, and Sentinel-3b. This nadir altimeters constellation was operating during the 20---20-- period. No observation error is considered in this challenge.
+The SSH observations include simulations of seven altimeters data: Altika, CryoSat-2, HaiYang-2Ag, HaiYang-2B, Jason 3, Sentinel-3a, and Sentinel-3b. This nadir altimeters constellation is operating since 2019. No observation error is considered in this challenge.
 
 ### Data sequence and use
 
