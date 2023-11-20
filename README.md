@@ -8,7 +8,7 @@ This datachallenge is based on the principle of the https://github.com/ocean-dat
 
 The two references simulations used are the NATL60 and eNATL60 simulations both based on the NEMO model. Both simulations are run with a 1/60° horizontal resolution, and without tidal forcing. The simulations are here downgraded to the resolution of 1/8° and 1/20° for memory consideration. TODO: Ajouter des références pour les deux simulations.
 
-## Observations
+### Observations
 
 The SSH observations include simulations of seven altimeters data: Altika, CryoSat-2, HaiYang-2Ag, HaiYang-2B, Jason 3, Sentinel-3a, and Sentinel-3b. This nadir altimeters constellation is operating since 2019. No observation error is considered in this challenge.
 
