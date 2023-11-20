@@ -6,7 +6,10 @@ This datachallenge is based on the principle of the https://github.com/ocean-dat
 
 ### Reference simulations 
 
-The two references simulations used are the NATL60 and eNATL60 simulations both based on the NEMO model. Both simulations are run with a 1/60° horizontal resolution, and without tidal forcing. The simulations are here downgraded to the resolution of 1/8° and 1/20° for memory consideration. TODO: Ajouter des références pour les deux simulations.
+The two references simulations used are the **NATL60-CMJ165** and the **eNATL60-BLB002** simulations, both based on the NEMO model, tide-free, and with a nature run grid resolution of 1/60°. 
+- **NATL60-CMJ165** covers the North Atlantic region, and provides hourly output data. For more detailed information, please visit this link: [NATL60-CJM165 Information](https://github.com/meom-configurations/NATL60-CJM165).
+- **eNATL60-BLB002**: This simulation covers an extended area, including the tropical/equatorial Atlantic, the entire Mediterranean Sea, and the Black Sea. It offers a more realistic simulation, including surface pressure forcing, but it does not have the explicit resolution of tides. The nature run grid resolution is 1/60° with hourly output. You can find additional information at this link: [eNATL60 Information](https://github.com/ocean-next/eNATL60).
+For convenience and memory consideration, we have reinterpolated both of these simulations onto two different grid resolutions: **1/20°** and **1/8°**. Additionally, we have provided **daily mean resampling** for these datasets.
 
 ### Observations
 
