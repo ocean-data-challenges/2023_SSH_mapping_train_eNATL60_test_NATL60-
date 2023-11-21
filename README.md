@@ -72,7 +72,7 @@ material_data_challenge/
 │   ├── reg_1_8_daily.zarr/
 │   ├── alongtrack/
 ```
-In both repositories, daily mean resampling of the simulations are provided, at the 1/8° ('''reg_1_8_daily.zarr''') and the 1/20° ('''reg_1_20_daily.zarr'') resolution grid. 
+In both repositories, daily mean resampling of the simulations are provided, at the 1/8° (```reg_1_8_daily.zarr```) and the 1/20° (```reg_1_20_daily.zarr```) resolution grid. 
 
 In the ```alongtrack``` directory, you may find the model dataset variables interpolated onto the 2019-2020 nadir altemeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b.
 
@@ -114,4 +114,4 @@ TO DO : add link to data wazabi
 
 ### Prepare the data
 
-For methods that take as input gridded observations instead of raw along tracks, we provide a binning script '''alongtrack_binning.ipynb''', that interpolates simulated along tracks observations on a daily grid whose spatial resolution is left to the user's choice (1/8° or 1/20°).
+For methods that take as input gridded observations instead of raw along tracks, we provide a binning script ```alongtrack_binning.ipynb```, that interpolates simulated along tracks observations on a daily grid whose spatial resolution is left to the user's choice (1/8° or 1/20°).
