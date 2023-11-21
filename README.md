@@ -56,54 +56,62 @@ With:
 - λx: minimum spatial scale resolved;
 - λt: minimum temporal scale resolved.
 
-## Download the data
+## Data 
+
+### Data description
+
+The final datasets are available in two separate repositories : **eNATL60-BLB002** and **NATL60-CMJ165**. 
 ```
 material_data_challenge/
 ├── eNATL60-BLB002/
 │   ├── reg_1_20_daily.zarr/
-│   ├── reg_1_20.zarr/
 │   ├── reg_1_8_daily.zarr/
-│   ├── reg_1_8.zarr/
 │   ├── alongtrack/
 ├── NATL60-CMJ165/
 │   ├── reg_1_20_daily.zarr/
-│   ├── reg_1_20.zarr/
 │   ├── reg_1_8_daily.zarr/
-│   ├── reg_1_8.zarr/
 │   ├── alongtrack/
 ```
+In both repositories, daily mean resampling of the simulations are provided, at the 1/8° ('''reg_1_8_daily.zarr''') and the 1/20° ('''reg_1_20_daily.zarr'') resolution grid. 
 
-For the **NATL60-CMJ165** dataset, you will find the folliwing variable:
-``` 
-coordinates:
-    lat: latitude vector [degree north]
-    lon: longitude vector [degree east]
-    time: time vector [date time]
-```
-``` 
-variables:
-    ssh: sea surface height simulated by the model [meters]
-    mdt: mean dynamic topography, computed as the temporal averaged simulated ssh [meters]
-    ssh_variance: variance map of the ssh variable [meters²]
-    sla: sea level anomaly, computed as: sla = ssh - mdt [meters]
-    ssh_norm: normalized ssh (using fir 4dvarnet mapping), computed as: ssh_norm = sla/sqrt(ssh_variance) [no unit]
-```
+In the ```alongtrack``` directory, you may find the model dataset variables interpolated onto the 2019-2020 nadir altemeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b.
 
-For the **eNATL60-BLB002** dataset, you will find the folliwing variable:
-``` 
-coordinates:
-    lat: latitude vector [degree north]
-    lon: longitude vector [degree east]
-    time: time vector [date time]
-```
-``` 
-variables:
-    ssh_model_with_HF: sea surface height simulated by the model [meters]
-    ssh: sea surface height simulated by the model without high frequency signal, i.e., with DAC ERA-INTERIM ssh signal removed and 25h temporal filtering to remove residual tidal effects [meters]
-    mdt: mean dynamic topography, computed as the temporal averaged simulated ssh [meters]
-    ssh_variance: variance map of the ssh variable [meters²]
-    sla: sea level anomaly, computed as: sla = ssh - mdt [meters]
-    ssh_norm: normalized ssh (using fir 4dvarnet mapping), computed as: ssh_norm = sla/sqrt(ssh_variance) [no unit]
-```
+- For the **NATL60-CMJ165** datasets, you will find the following variables:
+  ``` 
+  coordinates:
+      lat: latitude vector [degree north]
+      lon: longitude vector [degree east]
+      time: time vector [date time]
+  ```
+  ``` 
+  variables:
+      ssh: sea surface height simulated by the model [meters]
+      mdt: mean dynamic topography, computed as the temporal averaged simulated ssh [meters]
+      ssh_variance: variance map of the ssh variable [meters²]
+      sla: sea level anomaly, computed as: sla = ssh - mdt [meters]
+      ssh_norm: normalized ssh (using fir 4dvarnet mapping), computed as: ssh_norm = sla/sqrt(ssh_variance) [no unit]
+  ```
 
-In the ```alongtrack``` directory, you may find the model dataset variables interpolated onto the 2019-2020 nadir altemeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b
+- For the **eNATL60-BLB002** dataset, you will find the following variables:
+  ``` 
+  coordinates:
+      lat: latitude vector [degree north]
+      lon: longitude vector [degree east]
+      time: time vector [date time]
+  ```
+  ``` 
+  variables:
+      ssh_model_with_HF: sea surface height simulated by the model [meters]
+      ssh: sea surface height simulated by the model without high frequency signal, i.e., with DAC ERA-INTERIM ssh signal removed and 25h temporal filtering to remove residual tidal effects [meters]
+      mdt: mean dynamic topography, computed as the temporal averaged simulated ssh [meters]
+      ssh_variance: variance map of the ssh variable [meters²]
+      sla: sea level anomaly, computed as: sla = ssh - mdt [meters]
+      ssh_norm: normalized ssh (using fir 4dvarnet mapping), computed as: ssh_norm = sla/sqrt(ssh_variance) [no unit]
+  ```
+### Download the data
+
+TO DO : add link to data wazabi
+
+### Prepare the data
+
+For methods that take as input gridded observations instead of raw along tracks, we provide a binning script '''alongtrack_binning.ipynb''', that interpolates simulated along tracks observations on a daily grid whose spatial resolution is left to the user's choice (1/8° or 1/20°).
