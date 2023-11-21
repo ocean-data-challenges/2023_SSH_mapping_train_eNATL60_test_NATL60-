@@ -9,12 +9,12 @@ This datachallenge is based on the principle of the https://github.com/ocean-dat
 The two references simulations used are the **NATL60-CMJ165** and the **eNATL60-BLB002** simulations, both based on the NEMO model, tide-free, and with a nature run grid resolution of 1/60°. 
 - **NATL60-CMJ165** covers the North Atlantic region, and provides hourly output data. For more detailed information, please visit this link: [NATL60-CJM165 Information](https://github.com/meom-configurations/NATL60-CJM165).
 - **eNATL60-BLB002**: This simulation covers an extended area, including the tropical/equatorial Atlantic, the entire Mediterranean Sea, and the Black Sea. It offers a more realistic simulation, including surface pressure forcing, but it does not have the explicit resolution of tides. The nature run grid resolution is 1/60° with hourly output. You can find additional information at this link: [eNATL60 Information](https://github.com/ocean-next/eNATL60).
-- 
+  
 For convenience and memory consideration, we have reinterpolated both of these simulations onto two different grid resolutions: **1/20°** and **1/8°**. Additionally, we have provided **daily mean resampling** for these datasets.
 
 ### Observations
 
-The SSH observations include simulations of seven altimeters data: Altika, CryoSat-2, HaiYang-2Ag, HaiYang-2B, Jason 3, Sentinel-3a, and Sentinel-3b. This nadir altimeters constellation is operating since 2019. No observation error is considered in this challenge.
+The SSH observations include simulations of seven altimeters data: Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b. This nadir altimeters constellation was operating during the 2019-2020 period. No observation error is considered in this challenge.
 
 ### Data sequence and use
 
@@ -55,3 +55,55 @@ With:
 - σ(RMSE): standard deviation of the RMSE score;
 - λx: minimum spatial scale resolved;
 - λt: minimum temporal scale resolved.
+
+## Download the data
+```
+material_data_challenge/
+├── eNATL60-BLB002/
+│   ├── reg_1_20_daily.zarr/
+│   ├── reg_1_20.zarr/
+│   ├── reg_1_8_daily.zarr/
+│   ├── reg_1_8.zarr/
+│   ├── alongtrack/
+├── NATL60-CMJ165/
+│   ├── reg_1_20_daily.zarr/
+│   ├── reg_1_20.zarr/
+│   ├── reg_1_8_daily.zarr/
+│   ├── reg_1_8.zarr/
+│   ├── alongtrack/
+```
+
+For the **NATL60-CMJ165** dataset, you will find the folliwing variable:
+``` 
+coordinates:
+    lat: latitude vector [degree north]
+    lon: longitude vector [degree east]
+    time: time vector [date time]
+```
+``` 
+variables:
+    ssh: sea surface height simulated by the model [meters]
+    mdt: mean dynamic topography, computed as the temporal averaged simulated ssh [meters]
+    ssh_variance: variance map of the ssh variable [meters²]
+    sla: sea level anomaly, computed as: sla = ssh - mdt [meters]
+    ssh_norm: normalized ssh (using fir 4dvarnet mapping), computed as: ssh_norm = sla/sqrt(ssh_variance) [no unit]
+```
+
+For the **eNATL60-BLB002** dataset, you will find the folliwing variable:
+``` 
+coordinates:
+    lat: latitude vector [degree north]
+    lon: longitude vector [degree east]
+    time: time vector [date time]
+```
+``` 
+variables:
+    ssh_model_with_HF: sea surface height simulated by the model [meters]
+    ssh: sea surface height simulated by the model without high frequency signal, i.e., with DAC ERA-INTERIM ssh signal removed and 25h temporal filtering to remove residual tidal effects [meters]
+    mdt: mean dynamic topography, computed as the temporal averaged simulated ssh [meters]
+    ssh_variance: variance map of the ssh variable [meters²]
+    sla: sea level anomaly, computed as: sla = ssh - mdt [meters]
+    ssh_norm: normalized ssh (using fir 4dvarnet mapping), computed as: ssh_norm = sla/sqrt(ssh_variance) [no unit]
+```
+
+In the ```alongtrack``` directory, you may find the model dataset variables interpolated onto the 2019-2020 nadir altemeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b
