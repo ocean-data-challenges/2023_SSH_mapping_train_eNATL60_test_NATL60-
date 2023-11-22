@@ -2,16 +2,16 @@
 
 ## Motivation
 
-This datachallenge is based on the principle of the https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60 datachallenge. The aim is again to compare several methods for reconstructing sequences of Sea Surface Height (SSH) from partial satellite altimeter observations. As in the previous datachallenge, this datachellenge follows the framework of an OSSE (Observation System Simulation Experiment) where "Real" full SSH are from a numerical simulation with a realistic, high-resolution ocean circulation model: the reference simulation. However, this datachallenge proposes to use two separate reference simulations, each covering an entire year, whereas previous datachallenges only used a single simulation covering one year: a first simulation for training methods requiring learning from full SSH fields, and a second for evaluating different reconstruction methods over a full year. On the one hand, this approach enables a longer learning period: a whole year, whereas in previous data challenges, learning was limited to a few months to maintain an independent evaluation period within the same year. Secondly, SSH reconstructions can be validated on a full year of data, totally independent of the learning data, making it possible to study any seasonal effects in reconstruction performance.  
+This datachallenge is based on the principle of the [SSH Mapping Data Challenge 2020a](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60). The aim is again to compare several methods for reconstructing sequences of Sea Surface Height (SSH) from partial satellite altimeter observations. As in the previous datachallenge, this datachallenge follows the framework of an OSSE (Observation System Simulation Experiment) where "Real" full SSH are from a numerical simulation with a realistic, high-resolution ocean circulation model: the reference simulation. However, this datachallenge proposes to use two separate reference simulations, each covering an entire year, whereas previous datachallenges only used a single simulation covering one year: a first simulation for training methods requiring learning from full SSH fields, and a second for evaluating different reconstruction methods over a full year. On the one hand, this approach enables a longer learning period: a whole year, whereas in previous data challenges, learning was limited to a few months to maintain an independent evaluation period within the same year. Secondly, SSH reconstructions can be validated on a full year of data, totally independent of the learning data, making it possible to study any seasonal effects in reconstruction performance.
 
-## Design of experiment 
+## Design of experiment
 
-### Reference simulations 
+### Reference simulations
 
-The two references simulations used are the **NATL60-CMJ165** and the **eNATL60-BLB002** simulations, both based on the NEMO model, tide-free, and with a nature run grid resolution of 1/60°. 
+The two references simulations used are the **NATL60-CMJ165** and the **eNATL60-BLB002** simulations, both based on the NEMO model, tide-free, and with a nature run grid resolution of 1/60°.
 - **NATL60-CMJ165** covers the North Atlantic region, and provides hourly output data. For more detailed information, please visit this link: [NATL60-CJM165 Information](https://github.com/meom-configurations/NATL60-CJM165).
 - **eNATL60-BLB002**: This simulation covers an extended area, including the tropical/equatorial Atlantic, the entire Mediterranean Sea, and the Black Sea. It offers a more realistic simulation, including surface pressure forcing, but it does not have the explicit resolution of tides. The nature run grid resolution is 1/60° with hourly output. You can find additional information at this link: [eNATL60 Information](https://github.com/ocean-next/eNATL60).
-  
+
 For convenience and memory consideration, we have reinterpolated both of these simulations onto two different grid resolutions: **1/20°** and **1/8°**. Additionally, we have provided **daily mean resampling** for these datasets.
 
 ### Observations
@@ -58,11 +58,11 @@ With:
 - λx: minimum spatial scale resolved;
 - λt: minimum temporal scale resolved.
 
-## Data 
+## Data
 
 ### Data description
 
-The final datasets are available in two separate repositories : **eNATL60-BLB002** and **NATL60-CMJ165**. 
+The final datasets are available in two separate repositories : **eNATL60-BLB002** and **NATL60-CMJ165**.
 ```
 material_data_challenge/
 ├── eNATL60-BLB002/
@@ -74,18 +74,18 @@ material_data_challenge/
 │   ├── reg_1_8_daily.zarr/
 │   ├── alongtrack/
 ```
-In both repositories, daily mean resampling of the simulations are provided, at the 1/8° (```reg_1_8_daily.zarr```) and the 1/20° (```reg_1_20_daily.zarr```) resolution grid. 
+In both repositories, daily mean resampling of the simulations are provided, at the 1/8° (```reg_1_8_daily.zarr```) and the 1/20° (```reg_1_20_daily.zarr```) resolution grid.
 
-In the ```alongtrack``` directory, you may find the model dataset variables interpolated onto the 2019-2020 nadir altemeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b.
+In the ```alongtrack``` directory, you may find the model dataset variables interpolated onto the 2019-2020 nadir altimeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b.
 
 - For the **NATL60-CMJ165** datasets, you will find the following variables:
-  ``` 
+  ```
   coordinates:
       lat: latitude vector [degree north]
       lon: longitude vector [degree east]
       time: time vector [date time]
   ```
-  ``` 
+  ```
   variables:
       ssh: sea surface height simulated by the model [meters]
       mdt: mean dynamic topography, computed as the temporal averaged simulated ssh [meters]
@@ -95,13 +95,13 @@ In the ```alongtrack``` directory, you may find the model dataset variables inte
   ```
 
 - For the **eNATL60-BLB002** dataset, you will find the following variables:
-  ``` 
+  ```
   coordinates:
       lat: latitude vector [degree north]
       lon: longitude vector [degree east]
       time: time vector [date time]
   ```
-  ``` 
+  ```
   variables:
       ssh_model_with_HF: sea surface height simulated by the model [meters]
       ssh: sea surface height simulated by the model without high frequency signal, i.e., with DAC ERA-INTERIM ssh signal removed and 25h temporal filtering to remove residual tidal effects [meters]
@@ -112,7 +112,44 @@ In the ```alongtrack``` directory, you may find the model dataset variables inte
   ```
 ### Download the data
 
-TO DO : add link to data wazabi
+The datasets are available at the following links:
+- **eNATL60-BLB002** (1/20°):
+    ```
+    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-ssh-2009-2010-1_20.nc
+    ```
+- **eNATL60-BLB002** (1/8°):
+    ```
+    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-ssh-2009-2010-1_8.nc
+    ```
+- **NATL60-CJM165** (1/20°) - *for evaluation*:
+    ```
+    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-ssh-2012-2013-1_20.nc
+    ```
+- **NATL60-CJM165** (1/8°) - *for evaluation*:
+    ```
+    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-ssh-2012-2013-1_8.nc
+    ```
+
+The alongtrack files are archived in zip format as they contain a lot of files. They are available at the following links:
+
+- **eNATL60-BLB002 alongtrack**:
+    ```
+    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-alongtrack.gz
+    ```
+- **NATL60-CJM165 alongtrack**:
+    ```
+    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-alongtrack.gz
+    ```
+
+To download a file, you can use the `wget` command. For example, with NATL60 in 1/8°:
+```sh
+wget https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-ssh-2012-2013-1_8.nc
+```
+To extract an archive in the same directory, use the `tar` command. For example, with NATL60's alongtrack:
+```sh
+tar -zxvf NATL60-CJM165-alongtrack.gz
+```
+
 
 ### Prepare the data
 
