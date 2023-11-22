@@ -64,7 +64,7 @@ With:
 
 For both **eNATL60-BLB002** and **NATL60-CMJ165** simulations, daily mean resampling of the datasets variables are provided, at the 1/8° (```*-*_reg_1_8_daily.nc```) and the 1/20° (```*-*_reg_1_20_daily.nc```) resolution grid.
 
-In the **alongtrack** files (```\*-\*_alongtrack.gz```) , you may find the simulations variables interpolated onto the 2019-2020 nadir altimeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b.
+In the **alongtrack** files (```*-*_alongtrack.gz```) , you may find the simulations variables interpolated onto the 2019-2020 nadir altimeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b.
 
 - For the **NATL60-CMJ165** datasets, you will find the following variables:
   ```
