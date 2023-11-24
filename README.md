@@ -153,4 +153,4 @@ tar -zxvf NATL60-CJM165-alongtrack.gz
 
 ### Prepare the data
 
-For methods that take as input gridded observations instead of raw along tracks, we provide a binning script ```alongtrack_binning.ipynb```, that interpolates simulated along tracks observations on a daily grid whose spatial resolution is left to the user's choice (1/8° or 1/20°).
+For methods that take as input **gridded observations** instead of raw along tracks, we provide a **binning** script ```alongtrack_binning.ipynb```, that interpolates simulated along tracks observations on a daily grid whose spatial resolution is left to the user's choice (1/8° or 1/20°).
