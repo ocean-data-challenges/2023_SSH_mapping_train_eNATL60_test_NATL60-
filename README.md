@@ -42,6 +42,9 @@ TODO: parler des sous-périodes (milieux de saisons)
 - Automne   : YYYY-10-21 à YYYY-11-30
 -->
 ### Region of interest
+The region of interest in this datachallenge is a region of the Gulf Stream current in the Norh Atlantic basin **[64°O x 49°O , 29°N x 44°N]**, referred to as **GF**. In this datachallenge, all the evaluation diagnoses of SSH reconstruction will be computed over this domain.
+
+<img src='figures/GF_evaluation_domain.png' alt='Gulf Stream evaluation domain (GF)'>
 
 ## Leaderboard
 
