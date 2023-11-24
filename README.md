@@ -62,9 +62,9 @@ With:
 
 ### Data description
 
-For both **eNATL60-BLB002** and **NATL60-CMJ165** simulations, daily mean resampling of the datasets variables are provided, at the 1/8° (```*-*_reg_1_8_daily.nc```) and the 1/20° (```*-*_reg_1_20_daily.nc```) resolution grid.
+For both **eNATL60-BLB002** and **NATL60-CMJ165** simulations, daily mean resampling of the datasets variables are provided, at the 1/8° (```*-*-daily-reg-1_8.nc```) and the 1/20° (```*-*-daily-reg-1_20.nc```) resolution grid.
 
-In the **alongtrack** files (```*-*_alongtrack.gz```) , you may find the simulations variables interpolated onto the 2019-2020 nadir altimeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b.
+In the **alongtrack** files (```*-*-alongtrack.gz```) , you may find the simulations variables interpolated onto the 2019-2020 nadir altimeter constellation available in CMEMS, i.e., Jason-3, Sentinel-3a, Sentinel-3b, Cryosat-2, Saral/Altika, Haiyang-2a, Haiyang-2b.
 
 - For the **NATL60-CMJ165** datasets, you will find the following variables:
   ```
@@ -103,38 +103,40 @@ In the **alongtrack** files (```*-*_alongtrack.gz```) , you may find the simulat
 The datasets of simulations daily mean resampling are available at the following links:
 - **eNATL60-BLB002** (1/20°):
     ```
-    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-ssh-2009-2010-1_20.nc
+    https://s3.eu-central-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-daily-reg-1_8.nc
     ```
 - **eNATL60-BLB002** (1/8°):
     ```
-    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-ssh-2009-2010-1_8.nc
+    https://s3.eu-central-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-daily-reg-1_8.nc
     ```
 - **NATL60-CJM165** (1/20°) - *for evaluation*:
     ```
-    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-ssh-2012-2013-1_20.nc
+    https://s3.eu-central-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-daily-reg-1_20.nc
     ```
 - **NATL60-CJM165** (1/8°) - *for evaluation*:
     ```
-    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-ssh-2012-2013-1_8.nc
+    https://s3.eu-central-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-daily-reg-1_8.nc
     ```
 
 The alongtrack files are archived in zip format as they contain a lot of files. They are available at the following links:
 
 - **eNATL60-BLB002 alongtracks**:
     ```
-    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-alongtrack.gz
+    https://s3.eu-central-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/eNATL60-BLB002-alongtrack.gz
     ```
 - **NATL60-CJM165 alongtracks**:
     ```
-    https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-alongtrack.gz
+    https://s3.eu-central-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-alongtrack.gz
     ```
 
-To download a file, you can use the `wget` command. For example, with NATL60 in 1/8°:
+To download a file, you can use the `wget` command. For example, if you want to download NATL60-CJM165 with a resolution of 1/8°:
 ```sh
-wget https://s3.us-east-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-ssh-2012-2013-1_8.nc
+wget https://s3.eu-central-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-daily-reg-1_8.nc
 ```
-To extract an archive in the same directory, use the `tar` command. For example, with NATL60's alongtrack:
+To extract an archive in the same directory, use the `tar` command. For example, if you want to download NATL60's alongtrack and extract it from its archive:
 ```sh
+wget https://s3.eu-central-1.wasabisys.com/melody/data_challenge_Daniel_Guillaume/public/NATL60-CJM165-alongtrack.gz
+
 tar -zxvf NATL60-CJM165-alongtrack.gz
 ```
 
