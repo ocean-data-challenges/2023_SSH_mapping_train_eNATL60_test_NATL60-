@@ -10,10 +10,10 @@ def rmse_based_scores(ds_oi, ds_ref):
     logging.info('     Compute RMSE-based scores...')
 
     # RMSE(t) based score
-    rmse_t = 1.0 - (((ds_oi['sossheig'] - ds_ref['sossheig'])**2).mean(dim=('lon', 'lat')))**0.5/(((ds_ref['sossheig'])**2).mean(dim=('lon', 'lat')))**0.5
+    rmse_t = 1.0 - (((ds_oi['ssh'] - ds_ref['ssh'])**2).mean(dim=('lon', 'lat')))**0.5/(((ds_ref['ssh'])**2).mean(dim=('lon', 'lat')))**0.5
     # RMSE(x, y) based score
-    # rmse_xy = 1.0 - (((ds_oi['sossheig'] - ds_ref['sossheig'])**2).mean(dim=('time')))**0.5/(((ds_ref['sossheig'])**2).mean(dim=('time')))**0.5
-    rmse_xy = (((ds_oi['sossheig'] - ds_ref['sossheig'])**2).mean(dim=('time')))**0.5
+    # rmse_xy = 1.0 - (((ds_oi['ssh'] - ds_ref['ssh'])**2).mean(dim=('time')))**0.5/(((ds_ref['ssh'])**2).mean(dim=('time')))**0.5
+    rmse_xy = (((ds_oi['ssh'] - ds_ref['ssh'])**2).mean(dim=('time')))**0.5
 
     rmse_t = rmse_t.rename('rmse_t')
     rmse_xy = rmse_xy.rename('rmse_xy')
@@ -22,8 +22,8 @@ def rmse_based_scores(ds_oi, ds_ref):
     reconstruction_error_stability_metric = rmse_t.std().values
 
     # Show leaderboard SSH-RMSE metric (spatially and time averaged normalized RMSE)
-    leaderboard_rmse = 1.0 - (((ds_oi['sossheig'] - ds_ref['sossheig']) ** 2).mean()) ** 0.5 / (
-        ((ds_ref['sossheig']) ** 2).mean()) ** 0.5
+    leaderboard_rmse = 1.0 - (((ds_oi['ssh'] - ds_ref['ssh']) ** 2).mean()) ** 0.5 / (
+        ((ds_ref['ssh']) ** 2).mean()) ** 0.5
 
     logging.info('          => Leaderboard SSH RMSE score = %s', numpy.round(leaderboard_rmse.values, 2))
     logging.info('          Error variability = %s (temporal stability of the mapping error)', numpy.round(reconstruction_error_stability_metric, 2))
@@ -38,13 +38,13 @@ def psd_based_scores(ds_oi, ds_ref):
     with ProgressBar():
 
         # Compute error = SSH_reconstruction - SSH_true
-        err = (ds_oi['sossheig'] - ds_ref['sossheig'])
+        err = (ds_oi['ssh'] - ds_ref['ssh'])
         err = err.chunk({"lat":1, 'time': err['time'].size, 'lon': err['lon'].size})
         # make time vector in days units
         err['time'] = (err.time - err.time[0]) / numpy.timedelta64(1, 'D')
 
         # Rechunk SSH_true
-        signal = ds_ref['sossheig'].chunk({"lat":1, 'time': ds_ref['time'].size, 'lon': ds_ref['lon'].size})
+        signal = ds_ref['ssh'].chunk({"lat":1, 'time': ds_ref['time'].size, 'lon': ds_ref['lon'].size})
         # make time vector in days units
         signal['time'] = (signal.time - signal.time[0]) / numpy.timedelta64(1, 'D')
 
