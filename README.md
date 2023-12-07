@@ -48,12 +48,12 @@ The region of interest in this datachallenge is a region of the Gulf Stream curr
 
 ## Leaderboard
 
-| Method | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Notes | Reference |
-| ------ | ------- | ------- | ------ | --------- | ----- | --------- |
-| MIOST  | . | . | . | . | . | . |
-| 4DVarNet-NATL  | . | . | . | . | . | . |
-| 4DVarNet-GF  | . | . | . | . | . | . |
-| etc  | . | . | . | . | . | . |
+| Method   |   Season   | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Domain | Reference |
+| -------- | ---------- | ------- | ------- | ------ | --------- | ------ | --------- |
+| 4DVarNet | Mid_autumn | . | . | . | . | GF | eval_4dvarnet.ipynb |
+|          | Mid_winter | . | . | . | . |    |                     |
+|          | Mid_spring | . | . | . | . |    |                     |
+|          | Mid_summer | . | . | . | . |    |                     |
 
 With:
 - µ(RMSE): average RMSE score;
