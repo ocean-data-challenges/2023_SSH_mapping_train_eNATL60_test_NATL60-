@@ -55,10 +55,11 @@ The region of interest in this datachallenge is a region of the Gulf Stream curr
 |          | Mid_spring | 0.93 | 0.01 | 1.2  | 10.55|    |                     |
 |          | Mid_summer | 0.93 | 0.01 | 1.31 | 7.61 |    |                     |
 | -------- | ---------- | ------- | ------- | ------ | --------- | ------ | --------- |
-| MIOST    | Mid_autumn | . | . | 1.3  | . | GF | eval_miost.ipynb |
-|          | Mid_winter | . | . | 1.33 | . |    |                  |
-|          | Mid_spring | . | . | 1.2  | . |    |                  |
-|          | Mid_summer | . | . | 1.31 | . |    |                  |
+| MIOST    | Mid_autumn | 0.95 | 0.01 | 1.3  | 8.48 | GF |   eval_miost.ipynb  |
+|          | Mid_winter | 0.93 | 0.01 | 1.33 | 7.97 |    |                     |
+|          | Mid_spring | 0.93 | 0.01 | 1.2  | 10.55|    |                     |
+|          | Mid_summer | 0.93 | 0.01 | 1.31 | 7.61 |    |                     |
+
 With:
 - µ(RMSE): average RMSE score;
 - σ(RMSE): standard deviation of the RMSE score;
