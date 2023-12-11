@@ -47,14 +47,29 @@ The region of interest in this datachallenge is a region of the Gulf Stream curr
 <img src='figures/GF_evaluation_domain.png' alt='Gulf Stream evaluation domain (GF)'>
 
 ## Leaderboard
+At the **1/8°** resolution:
 
 | Method   |   Season   | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Domain | Reference |
-| -------- | ---------- | ------- | ------- | ----- | --------- | ------ | --------- |
-| 4DVarNet | Mid_autumn | 0.95 | 0.01 | 1.3  | 8.48 | GF | eval_4dvarnet.ipynb |
-|          | Mid_winter | 0.93 | 0.01 | 1.33 | 7.97 |    |                     |
-|          | Mid_spring | 0.93 | 0.01 | 1.2  | 10.55|    |                     |
-|          | Mid_summer | 0.93 | 0.01 | 1.31 | 7.61 |    |                     |
-| MIOST    | Mid_autumn | . | . | . | . |    | eval_miost.ipynb    |
+| -------- | ---------- | ------- | ------- | -----  | --------- | ------ | --------- |
+| 4DVarNet | Mid_autumn | 0.95 | 0.01 | 1.3  | 8.48  | GF | eval_4dvarnet.ipynb |
+|          | Mid_winter | 0.93 | 0.01 | 1.33 | 7.97  |    |                     |
+|          | Mid_spring | 0.93 | 0.01 | 1.2  | 10.55 |    |                     |
+|          | Mid_summer | 0.93 | 0.01 | 1.31 | 7.61  |    |                     |
+| MIOST    | Mid_autumn | 0.94 | 0.01 | 1.36 | 10.22 | GF | eval_miost.ipynb    |
+|          | Mid_winter | 0.93 | 0.01 | 1.41 | 8.14  |    |                     |
+|          | Mid_spring | 0.92 | 0.01 | 1.31 | 10.47 |    |                     |
+|          | Mid_summer | 0.92 | 0.01 | 1.58 | 10.04 |    |                     |
+
+At the **1/20°** resolution:
+
+
+| Method   |   Season   | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Domain | Reference |
+| -------- | ---------- | ------- | ------- | -----  | --------- | ------ | --------- |
+| 4DVarNet | Mid_autumn | . | . | . | . | GF | eval_4dvarnet.ipynb |
+|          | Mid_winter | . | . | . | . |    |                     |
+|          | Mid_spring | . | . | . | . |    |                     |
+|          | Mid_summer | . | . | . | . |    |                     |
+| MIOST    | Mid_autumn | . | . | . | . | GF | eval_miost.ipynb    |
 |          | Mid_winter | . | . | . | . |    |                     |
 |          | Mid_spring | . | . | . | . |    |                     |
 |          | Mid_summer | . | . | . | . |    |                     |
