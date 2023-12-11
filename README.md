@@ -69,10 +69,10 @@ At the **1/20°** resolution:
 |          | Mid_winter | . | . | . | . |    |                     |
 |          | Mid_spring | . | . | . | . |    |                     |
 |          | Mid_summer | . | . | . | . |    |                     |
-| MIOST    | Mid_autumn | 0.94 | 0.01 | 1.36 | 10.22 | GF | eval_miost.ipynb    |
-|          | Mid_winter | 0.93 | 0.01 | 1.41 | 8.14  |    |                     |
-|          | Mid_spring | 0.92 | 0.01 | 1.31 | 10.47 |    |                     |
-|          | Mid_summer | 0.92 | 0.01 | 1.58 | 10.04 |    |                     |
+| MIOST    | Mid_autumn | 0.94 | 0.01 | 1.37 | 10.22 | GF | eval_miost.ipynb    |
+|          | Mid_winter | 0.93 | 0.01 | 1.43 | 8.15  |    |                     |
+|          | Mid_spring | 0.92 | 0.01 | 1.32 | 10.44 |    |                     |
+|          | Mid_summer | 0.92 | 0.01 | 1.57 | 10.04 |    |                     |
 
 With:
 - µ(RMSE): average RMSE score;
