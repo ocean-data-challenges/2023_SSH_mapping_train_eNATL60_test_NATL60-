@@ -55,10 +55,10 @@ At the **1/8°** resolution:
 |          | Mid_winter | 0.93 | 0.01 | 1.33 | 7.97  |    |                     |
 |          | Mid_spring | 0.93 | 0.01 | 1.2  | 10.55 |    |                     |
 |          | Mid_summer | 0.93 | 0.01 | 1.31 | 7.61  |    |                     |
-| MIOST    | Mid_autumn | . | . | . | . | GF | eval_miost.ipynb    |
-|          | Mid_winter | . | . | . | . |    |                     |
-|          | Mid_spring | . | . | . | . |    |                     |
-|          | Mid_summer | . | . | . | . |    |                     |
+| MIOST    | Mid_autumn | 0.94 | 0.01 | 1.36 | 10.21 | GF | eval_miost.ipynb    |
+|          | Mid_winter | 0.93 | 0.01 | 1.41 | 8.14  |    |                     |
+|          | Mid_spring | 0.92 | 0.01 | 1.31 | 10.47 |    |                     |
+|          | Mid_summer | 0.92 | 0.01 | 1.58 | 10.03 |    |                     |
 
 At the **1/20°** resolution:
 
