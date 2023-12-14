@@ -5,7 +5,7 @@ import xrft
 from dask.diagnostics import ProgressBar
 import matplotlib.pyplot as plt
 
-def rmse_based_scores(ds_rec, ds_ref):
+def rmse_based_scores(ds_rec, ds_ref, prec=3):
 
     logging.info('     Compute RMSE-based scores...')
 
@@ -25,13 +25,13 @@ def rmse_based_scores(ds_rec, ds_ref):
     leaderboard_rmse = 1.0 - (((ds_rec['ssh'] - ds_ref['ssh']) ** 2).mean()) ** 0.5 / (
         ((ds_ref['ssh']) ** 2).mean()) ** 0.5
 
-    logging.info('          => Leaderboard SSH RMSE score = %s', numpy.round(leaderboard_rmse.values, 2))
-    logging.info('          Error variability = %s (temporal stability of the mapping error)', numpy.round(reconstruction_error_stability_metric, 2))
+    logging.info('          => Leaderboard SSH RMSE score = %s', numpy.round(leaderboard_rmse.values, prec))
+    logging.info('          Error variability = %s (temporal stability of the mapping error)', numpy.round(reconstruction_error_stability_metric, prec))
 
-    return rmse_t, rmse_xy, numpy.round(leaderboard_rmse.values, 2), numpy.round(reconstruction_error_stability_metric, 2)
+    return rmse_t, rmse_xy, numpy.round(leaderboard_rmse.values, prec), numpy.round(reconstruction_error_stability_metric, prec)
 
 
-def psd_based_scores(ds_rec, ds_ref):
+def psd_based_scores(ds_rec, ds_ref, prec=3):
 
     logging.info('     Compute PSD-based scores...')
 
@@ -72,8 +72,8 @@ def psd_based_scores(ds_rec, ds_ref):
         shortest_temporal_wavelength_resolved = numpy.min(y05)
 
         logging.info('          => Leaderboard Spectral score = %s (degree lon)',
-                     numpy.round(shortest_spatial_wavelength_resolved, 2))
+                     numpy.round(shortest_spatial_wavelength_resolved, prec))
         logging.info('          => shortest temporal wavelength resolved = %s (days)',
-                     numpy.round(shortest_temporal_wavelength_resolved, 2))
+                     numpy.round(shortest_temporal_wavelength_resolved, prec))
 
-        return (1.0 - mean_psd_err/mean_psd_signal), numpy.round(shortest_spatial_wavelength_resolved, 2), numpy.round(shortest_temporal_wavelength_resolved, 2)
+        return (1.0 - mean_psd_err/mean_psd_signal), numpy.round(shortest_spatial_wavelength_resolved, prec), numpy.round(shortest_temporal_wavelength_resolved, prec)
