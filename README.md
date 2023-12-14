@@ -67,16 +67,16 @@ At the **1/20°** resolution:
 
 | Method   |   Season   | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Domain | Reference |
 | -------- | ---------- | ------- | ------- | -----  | --------- | ------ | --------- |
-| 4DVarNet | Whole year | . | . | . | . | GF | eval_4dvarnet_1_20.ipynb |
-|          | Mid_autumn | . | . | . | . |    |                     |
-|          | Mid_winter | . | . | . | . |    |                     |
-|          | Mid_spring | . | . | . | . |    |                     |
-|          | Mid_summer | . | . | . | . |    |                     |
-| MIOST    | Whole year | 0.926 | 0.011 | 1.32 | 13.39 | GF | eval_miost_1_20.ipynb    |
-|          | Mid_autumn | 0.941 | 0.008 | 1.37 | 10.22 |    |                     |
-|          | Mid_winter | 0.926 | 0.007 | 1.43 | 8.15  |    |                     |
-|          | Mid_spring | 0.921 | 0.011 | 1.32 | 10.44 |    |                     |
-|          | Mid_summer | 0.923 | 0.007 | 1.57 | 10.04 |    |                     |
+| 4DVarNet | Whole_year | 0.944 | 0.009 | 0.997 | 8.424 | GF | eval_4dvarnet_1_20.ipynb |
+|          | Mid_autumn | 0.956 | 0.005 | 1.21  | 8.081 |    |                          |
+|          | Mid_winter | 0.941 | 0.006 | 1.24  | 7.851 |    |                          |
+|          | Mid_spring | 0.937 | 0.009 | 1.18  | 9.508 |    |                          |
+|          | Mid_summer | 0.941 | 0.005 | 1.20  | 7.156 |    |                          |
+| MIOST    | Whole year | 0.926 | 0.011 | 1.32  | 13.39 | GF | eval_miost_1_20.ipynb    |
+|          | Mid_autumn | 0.941 | 0.008 | 1.37  | 10.22 |    |                          |
+|          | Mid_winter | 0.926 | 0.007 | 1.43  | 8.15  |    |                          |
+|          | Mid_spring | 0.921 | 0.011 | 1.32  | 10.44 |    |                          |
+|          | Mid_summer | 0.923 | 0.007 | 1.57  | 10.04 |    |                          |
 
 With:
 - µ(RMSE): average RMSE score;
