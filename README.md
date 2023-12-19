@@ -65,7 +65,7 @@ At the **1/8°** resolution:
 At the **1/20°** resolution:
 
 
-| Method   |   Season   | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Domain | Reference |
+| Method   |   Period   | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Domain | Reference |
 | -------- | ---------- | ------- | ------- | -----  | --------- | ------ | --------- |
 | 4DVarNet | Whole year | 0.944 | 0.009 | 1.00  | 8.42 | GF | eval_4dvarnet_1_20.ipynb |
 |          | Mid_autumn | 0.956 | 0.005 | 1.21  | 8.08 |    |                          |
