@@ -47,7 +47,7 @@ The region of interest in this datachallenge is a region of the Gulf Stream curr
 <img src='figures/GF_evaluation_domain.png' alt='Gulf Stream evaluation domain (GF)'>
 
 ## Leaderboard
-At the **1/8°** resolution:
+<!-- At the **1/8°** resolution:
 
 | Method   |   Period   | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Domain | Reference |
 | -------- | ---------- | ------- | ------- | -----  | --------- | ------ | --------- |
@@ -76,7 +76,42 @@ At the **1/20°** resolution:
 |          | Mid_autumn | 0.941 | 0.008 | 1.37  | 10.22 |    |                          |
 |          | Mid_winter | 0.926 | 0.007 | 1.43  | 8.15  |    |                          |
 |          | Mid_spring | 0.921 | 0.011 | 1.32  | 10.44 |    |                          |
-|          | Mid_summer | 0.923 | 0.007 | 1.57  | 10.04 |    |                          |
+|          | Mid_summer | 0.923 | 0.007 | 1.57  | 10.04 |    |                          | -->
+
+**Whole year** :
+| Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
+| ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
+| MIOST            | 0.926     | 0.011   | 1.32   | 13.39     | eval_miost_1_20.ipynb    |
+| 4DVarNet-starter | 0.944     | 0.009   | 1.00   | 8.42      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
+
+**Mid Autumn** :
+| Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
+| ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
+| MIOST            | 0.941     | 0.008   | 1.37   | 10.22     | eval_miost_1_20.ipynb    |
+| 4DVarNet-starter | 0.956     | 0.005   | 1.21   | 8.08      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
+
+**Mid Winter** :
+| Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
+| ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
+| MIOST            | 0.926     | 0.007   | 1.43   | 8.15      | eval_miost_1_20.ipynb    |
+| 4DVarNet-starter | 0.941     | 0.006   | 1.24   | 7.85      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
+
+**Mid Spring** :
+| Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
+| ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
+| MIOST            | 0.921     | 0.011   | 1.32   | 10.44     | eval_miost_1_20.ipynb    |
+| 4DVarNet-starter | 0.937     | 0.009   | 1.18   | 9.51      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
+
+**Mid Summer** :
+| Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
+| ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
+| MIOST            | 0.923     | 0.007   | 1.57   | 10.04     | eval_miost_1_20.ipynb    |
+| 4DVarNet-starter | 0.941     | 0.005   | 1.20   | 7.16      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
 With:
 - µ(RMSE): average RMSE score;
