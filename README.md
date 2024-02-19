@@ -43,7 +43,7 @@ TODO: parler des sous-périodes (milieux de saisons)
 -->
 ### Domains for evaluation
 
-As we waim to evaluate the reconstruction performance of the different mapping methods at the scale of the North Atlantic basin, we choose 4 different regions for the calculation of reconstruction metrics. The selected regions show strong disparities in terms of ocean variability, but also in terms of spatial coverage by the altimeter constellation due to their different altitudes. They seem a good choice for estimating the performance of the mapping methods in various situations in the North Atlantic basin. 
+As we waim to evaluate the reconstruction performance of the different mapping methods at the scale of the North Atlantic basin, we choose 4 different regions for the calculation of reconstruction metrics. The selected regions show strong disparities in terms of ocean variability, but also in terms of spatial coverage by the altimeter constellation due to their different latitudes. They seem a good choice for estimating the performance of the mapping methods in various situations in the North Atlantic basin. 
 
 - **GF** : **[64°O x 49°O , 29°N x 44°N]**
 - **GRE** : **[39°O x 24°O , 49°N x 64°N]**
