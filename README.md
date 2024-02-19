@@ -41,10 +41,16 @@ TODO: parler des sous-périodes (milieux de saisons)
 - Été       : YYYY-07-11 à YYYY-08-20
 - Automne   : YYYY-10-21 à YYYY-11-30
 -->
-### Region of interest
-The region of interest in this datachallenge is a region of the Gulf Stream current in the Norh Atlantic basin **[64°O x 49°O , 29°N x 44°N]**, referred to as **GF**. In this datachallenge, all the evaluation diagnoses of SSH reconstruction will be computed over this domain.
+### Domains for evaluation
 
-<img src='figures/GF_evaluation_domain.png' alt='Gulf Stream evaluation domain (GF)'>
+As we waim to evaluate the reconstruction performance of the different mapping methods at the scale of the North Atlantic basin, we choose 4 different regions for the calculation of reconstruction metrics. The selected regions show strong disparities in terms of ocean variability, but also in terms of spatial coverage by the altimeter constellation due to their different altitudes. They seem a good choice for estimating the performance of the mapping methods in various situations in the North Atlantic basin. 
+
+- **GF** : **[64°O x 49°O , 29°N x 44°N]**
+- **GRE** : **[39°O x 24°O , 49°N x 64°N]**
+- **MAD** : **[27°O x 12°O , 29°N x 44°N]**
+- **CAV** : **[39°O x 24°O , 6°N x 21°N]**
+
+<img src='figures/evaluation_domains.png' alt='evaluation domains : GF, GRE, MAD, CAV'>
 
 ## Leaderboard
 <!-- At the **1/8°** resolution:
