@@ -43,7 +43,7 @@ TODO: parler des sous-périodes (milieux de saisons)
 -->
 ### Domains for evaluation
 
-As we waim to evaluate the reconstruction performance of the different mapping methods at the scale of the North Atlantic basin, we choose 4 different regions for the calculation of reconstruction metrics. The selected regions show strong disparities in terms of ocean variability, but also in terms of spatial coverage by the altimeter constellation due to their different latitudes. They seem a good choice for estimating the performance of the mapping methods in various situations in the North Atlantic basin. 
+As we waim to evaluate the reconstruction performance of the different mapping methods at the scale of the North Atlantic basin, we choose 4 different regions for the calculation of reconstruction metrics. The selected regions show strong disparities in terms of ocean variability, but also in terms of spatial coverage by the altimeter constellation due to their different latitudes. They seem a good choice for estimating the performance of the mapping methods in various situations in the North Atlantic basin.
 
 - **GF** : **[64°O x 49°O , 29°N x 44°N]**
 - **GRE** : **[39°O x 24°O , 49°N x 64°N]**
@@ -88,35 +88,40 @@ At the **1/20°** resolution:
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.926     | 0.011   | 1.32   | 13.39     | eval_miost_1_20.ipynb    |
-| 4DVarNet-starter | 0.944     | 0.009   | 1.00   | 8.42      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.944     | 0.009   | 1.00   | 8.42      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/8°    | 0.959     | 0.006   | 0.852  | 5.552     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
 **Mid Autumn** :
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.941     | 0.008   | 1.37   | 10.22     | eval_miost_1_20.ipynb    |
-| 4DVarNet-starter | 0.956     | 0.005   | 1.21   | 8.08      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.956     | 0.005   | 1.21   | 8.08      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/8°    | 0.967     | 0.005   | 0.867  | 4.772     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
 **Mid Winter** :
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.926     | 0.007   | 1.43   | 8.15      | eval_miost_1_20.ipynb    |
-| 4DVarNet-starter | 0.941     | 0.006   | 1.24   | 7.85      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.941     | 0.006   | 1.24   | 7.85      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/8°    | 0.957     | 0.004   | 0.894  | 5.312     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
 **Mid Spring** :
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.921     | 0.011   | 1.32   | 10.44     | eval_miost_1_20.ipynb    |
-| 4DVarNet-starter | 0.937     | 0.009   | 1.18   | 9.51      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.937     | 0.009   | 1.18   | 9.51      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/8°    | 0.955     | 0.006   | 0.911  | 5.738     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
 **Mid Summer** :
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.923     | 0.007   | 1.57   | 10.04     | eval_miost_1_20.ipynb    |
-| 4DVarNet-starter | 0.941     | 0.005   | 1.20   | 7.16      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.941     | 0.005   | 1.20   | 7.16      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/8°    | 0.956     | 0.004   | 0.929  | 5.561     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
 With:
