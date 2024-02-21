@@ -88,7 +88,7 @@ At the **1/20°** resolution:
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.926     | 0.011   | 1.32   | 13.39     | eval_miost_1_20.ipynb    |
-| 4DVarNet 1/20°   | 0.944     | 0.009   | 1.00   | 8.42      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.960     | 0.007   | 0.805  | 5.722     | eval_4dvarnet_1_20.ipynb |
 | 4DVarNet 1/8°    | 0.959     | 0.006   | 0.852  | 5.552     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
@@ -96,7 +96,7 @@ At the **1/20°** resolution:
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.941     | 0.008   | 1.37   | 10.22     | eval_miost_1_20.ipynb    |
-| 4DVarNet 1/20°   | 0.956     | 0.005   | 1.21   | 8.08      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.970     | 0.004   | 0.813  | 5.008     | eval_4dvarnet_1_20.ipynb |
 | 4DVarNet 1/8°    | 0.967     | 0.005   | 0.867  | 4.772     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
@@ -104,7 +104,7 @@ At the **1/20°** resolution:
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.926     | 0.007   | 1.43   | 8.15      | eval_miost_1_20.ipynb    |
-| 4DVarNet 1/20°   | 0.941     | 0.006   | 1.24   | 7.85      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.957     | 0.005   | 0.913  | 5.689     | eval_4dvarnet_1_20.ipynb |
 | 4DVarNet 1/8°    | 0.957     | 0.004   | 0.894  | 5.312     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
@@ -112,7 +112,7 @@ At the **1/20°** resolution:
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.921     | 0.011   | 1.32   | 10.44     | eval_miost_1_20.ipynb    |
-| 4DVarNet 1/20°   | 0.937     | 0.009   | 1.18   | 9.51      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.955     | 0.008   | 0.838  | 6.549     | eval_4dvarnet_1_20.ipynb |
 | 4DVarNet 1/8°    | 0.955     | 0.006   | 0.911  | 5.738     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
@@ -120,7 +120,7 @@ At the **1/20°** resolution:
 | Method           |   µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference                |
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.923     | 0.007   | 1.57   | 10.04     | eval_miost_1_20.ipynb    |
-| 4DVarNet 1/20°   | 0.941     | 0.005   | 1.20   | 7.16      | eval_4dvarnet_1_20.ipynb |
+| 4DVarNet 1/20°   | 0.958     | 0.005   | 0.827  | 5.558     | eval_4dvarnet_1_20.ipynb |
 | 4DVarNet 1/8°    | 0.956     | 0.004   | 0.929  | 5.561     | eval_4dvarnet_1_8.ipynb  |
 | 4DVarNet-CLS     | -         | -       | -      | -         | -                        |
 
