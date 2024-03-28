@@ -20,7 +20,7 @@ The SSH observations include simulations of seven altimeters data: Jason-3, Sent
 
 ### Data sequence and use
 
-The reconstruction of the SSH is evaluated on the **NATL60** domain over the whole year, which corresponds to the period from 2012-10-11 to 2013-09-20.
+The reconstruction of the SSH is evaluated on the **NATL60** domain over the whole year; however, 20 days are cropped at the beginning and at the end of this period for methods which might suffer from side effets. Therefore, the actual evaluation period (from which the metrics are computed) starts the 2012-10-21 and ends the 2013-09-10.
 
 For reconstruction methods that require learning from complete SSH fields, training is carried out on the **eNATL60** domain over the whole year, which corresponds to the period from 2009-07-01 to 2010-06-30. The validation subset can be chosen from the latter.
 
@@ -31,16 +31,7 @@ middle of each season:
 
 <img src='figures/sub_periods_seasons.png' alt='Sub-periods NATL diagram'>
 
-<!--
-To highlight the particularities of the different seasons of the year, sub-periods of 40 days in the middle of each season are defined. In this situation, for learning-based methods, training on the X sub-periods of eNATL60 would naturally lead to the assessment of the model on X sub-periods of NATL60 or the whole domain
 
-TODO: parler des sous-périodes (milieux de saisons)
-
-- Hiver     : YYYY-02-01 à YYYY-03-13
-- Printemps : YYYY-04-30 à YYYY-06-09
-- Été       : YYYY-07-11 à YYYY-08-20
-- Automne   : YYYY-10-21 à YYYY-11-30
--->
 ### Domains for evaluation
 
 As we waim to evaluate the reconstruction performance of the different mapping methods at the scale of the North Atlantic basin, we define 3 different regions for the calculation of reconstruction metrics. The selected regions show strong disparities in terms of ocean variability, but also in terms of spatial coverage by the altimeter constellation due to their different latitudes. They seem a good choice for estimating the performance of the mapping methods in various situations in the North Atlantic basin.
@@ -129,8 +120,8 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 |                  | GRE      | 0.956     | 0.006   | 1.112  | 15.5      |                          |
 |                  | MAD      | 0.951     | 0.008   | 0.926  | 21.93     |                          |
 | 4DVarNet 1/8°    | GF       | 0.959     | 0.006   | 0.852  | 5.55      | eval_4dvarnet_1_8.ipynb  |
-|                  | GRE      |    -      |    -    |   -    |     -     |                          |
-|                  | MAD      |    -      |    -    |   -    |     -     |                          |
+|                  | GRE      | 0.953     | 0.007   | 1.038  | 11.05     |                          |
+|                  | MAD      | 0.951     | 0.009   | 0.937  | 13.032    |                          |
 
 **Mid Autumn** :
 | Method           | Domain   | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
@@ -139,8 +130,8 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 |                  | GRE      | 0.958     | 0.005   | 1.392  | 6.36      |                          |
 |                  | MAD      | 0.952     | 0.006   | 1.229  | 4.4       |                          |
 | 4DVarNet 1/8°    | GF       | 0.967     | 0.005   | 0.867  | 4.77      | eval_4dvarnet_1_8.ipynb  |
-|                  | GRE      |    -      |    -    |   -    |     -     |                          |
-|                  | MAD      |    -      |    -    |   -    |     -     |                          |
+|                  | GRE      | 0.956     | 0.006   | 1.177  | 5.636     |                          |
+|                  | MAD      | 0.950     | 0.010   | 1.128  | 13.92     |                          |
 
 **Mid Winter** :
 | Method           | Domain   | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
@@ -149,8 +140,8 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 |                  | GRE      | 0.953     | 0.006   | 1.312  | 11.01     |                          |
 |                  | MAD      | 0.943     | 0.006   | 1.209  | 4.72      |                          |
 | 4DVarNet 1/8°    | GF       | 0.957     | 0.004   | 0.894  | 5.31      | eval_4dvarnet_1_8.ipynb  |
-|                  | GRE      |    -      |    -    |   -    |     -     |                          |
-|                  | MAD      |    -      |    -    |   -    |     -     |                          |
+|                  | GRE      | 0.948     | 0.007   | 1.177  | 11.20     |                          |
+|                  | MAD      | 0.942     | 0.007   | 1.041  |  5.389    |                          |
 
 **Mid Spring** :
 | Method           | Domain   | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
@@ -159,8 +150,8 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 |                  | GRE      | 0.958     | 0.002   | 1.269  | 12.24     |                          |
 |                  | MAD      | 0.951     | 0.003   | 1.138  | 17.65     |                          |
 | 4DVarNet 1/8°    | GF       | 0.955     | 0.006   | 0.911  | 5.74      | eval_4dvarnet_1_8.ipynb  |
-|                  | GRE      |    -      |    -    |   -    |     -     |                          |
-|                  | MAD      |    -      |    -    |   -    |     -     |                          |
+|                  | GRE      | 0.956     | 0.002   | 1.22   | 9.283     |                          |
+|                  | MAD      | 0.952     | 0.003   | 0.97   | 13.653    |                          |
 
 **Mid Summer** :
 | Method           | Domain   | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
@@ -169,8 +160,8 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 |                  | GRE      | 0.963     | 0.002   | 1.227  | 13.09     |                          |
 |                  | MAD      | 0.96      | 0.002   | 1.346  | 12.7      |                          |
 | 4DVarNet 1/8°    | GF       | 0.956     | 0.004   | 0.929  | 5.56      | eval_4dvarnet_1_8.ipynb  |
-|                  | GRE      |    -      |    -    |   -    |     -     |                          |
-|                  | MAD      |    -      |    -    |   -    |     -     |                          |
+|                  | GRE      | 0.958     | 0.002   | 1.05   |  6.536    |                          |
+|                  | MAD      | 0.9599    | 0.003   | 1.001  | 14.863    |                          |
 
 With:
 - µ(RMSE): average RMSE score;
