@@ -165,7 +165,6 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 -->
 
 <details>
-
 <summary> **Whole year** </summary>
 
 - GF :
@@ -183,11 +182,9 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
 | MIOST            | 0.951     | 0.008   | 0.926  | 21.93     | eval_miost.ipynb         |
 | 4DVarNet 1/8°    | 0.951     | 0.009   | 0.937  | 13.032    | eval_4dvarnet_1_8.ipynb  |
-
 </details>
 
 <details>
-
 <summary> **Mid Autumn** </summary>
 
 - GF :
@@ -196,27 +193,27 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 </details>
 
 <details>
-
 <summary> **Mid Winter** </summary>
+
 - GF :
 - GRE :
 - MAD :
 </details>
 
 <details>
-
 <summary> **Mid Spring** </summary>
+
 - GF :
 - GRE :
 - MAD :
 </details>
 
 <details>
-
 <summary> **Mid Summer** </summary>
+
 - GF :
 - GRE :
-- MAD :
+- MAD : 
 </details>
 
 With:
