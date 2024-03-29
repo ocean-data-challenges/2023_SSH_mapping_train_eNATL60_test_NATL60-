@@ -165,55 +165,55 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 -->
 
 <details>
-<summary> **Whole year** </summary>
+  <summary> **Whole year** </summary>
 
-- GF :
-| Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
-| ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
-| MIOST            | 0.926     | 0.011   | 1.315  | 13.39     | eval_miost.ipynb         |
-| 4DVarNet 1/8°    | 0.959     | 0.006   | 0.852  | 5.55      | eval_4dvarnet_1_8.ipynb  |
-- GRE :
-| Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
-| ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
-| MIOST            | 0.956     | 0.006   | 1.112  | 15.5      | eval_miost.ipynb         |
-| 4DVarNet 1/8°    | 0.953     | 0.007   | 1.038  | 11.05     | eval_4dvarnet_1_8.ipynb  |
-- MAD :
-| Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
-| ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
-| MIOST            | 0.951     | 0.008   | 0.926  | 21.93     | eval_miost.ipynb         |
-| 4DVarNet 1/8°    | 0.951     | 0.009   | 0.937  | 13.032    | eval_4dvarnet_1_8.ipynb  |
+  - GF :
+  | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
+  | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
+  | MIOST            | 0.926     | 0.011   | 1.315  | 13.39     | eval_miost.ipynb         |
+  | 4DVarNet 1/8°    | 0.959     | 0.006   | 0.852  | 5.55      | eval_4dvarnet_1_8.ipynb  |
+  - GRE :
+  | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
+  | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
+  | MIOST            | 0.956     | 0.006   | 1.112  | 15.5      | eval_miost.ipynb         |
+  | 4DVarNet 1/8°    | 0.953     | 0.007   | 1.038  | 11.05     | eval_4dvarnet_1_8.ipynb  |
+  - MAD :
+  | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
+  | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
+  | MIOST            | 0.951     | 0.008   | 0.926  | 21.93     | eval_miost.ipynb         |
+  | 4DVarNet 1/8°    | 0.951     | 0.009   | 0.937  | 13.032    | eval_4dvarnet_1_8.ipynb  |
 </details>
 
 <details>
-<summary> **Mid Autumn** </summary>
+  <summary> **Mid Autumn** </summary>
 
-- GF :
-- GRE :
-- MAD :
+  - GF :
+  - GRE :
+  - MAD :
 </details>
 
 <details>
-<summary> **Mid Winter** </summary>
-
-- GF :
-- GRE :
-- MAD :
+  <summary> **Mid Winter** </summary>
+  
+  - GF :
+  - GRE :
+  - MAD :
 </details>
 
 <details>
-<summary> **Mid Spring** </summary>
-
-- GF :
-- GRE :
-- MAD :
+  <summary> **Mid Spring** </summary>
+  
+  - GF :
+  - GRE :
+  - MAD :
 </details>
 
 <details>
-<summary> **Mid Summer** </summary>
-
-- GF :
-- GRE :
-- MAD : 
+  <summary> **Mid Summer** </summary>
+  
+  - GF :
+  - GRE :
+  - MAD : 
 </details>
 
 With:
