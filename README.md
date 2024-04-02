@@ -174,24 +174,24 @@ As we waim to evaluate the reconstruction performance of the different mapping m
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.926     | 0.011   | 1.315  | 13.39     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.959     | 0.006   | 0.852  | 5.108     | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.960     | 0.007   | 0.805  | 5.166     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.960     | 0.007   | 0.805  | 5.166     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.959     | 0.006   | 0.852  | 5.108     | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **GRE** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.956     | 0.006   | 1.112  | 15.5      | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.953     | 0.007   | 1.038  | 5.644     | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.954     | 0.008   | 1.029  | 6.579     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.954     | 0.008   | 1.029  | 6.579     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.953     | 0.007   | 1.038  | 5.644     | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **MAD** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.951     | 0.008   | 0.926  | 21.93     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.951     | 0.009   | 0.937  | 5.705     | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.952     | 0.01    | 0.91   | 6.616     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.952     | 0.01    | 0.91   | 6.616     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.951     | 0.009   | 0.937  | 5.705     | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
 </details>
 
@@ -205,24 +205,24 @@ As we waim to evaluate the reconstruction performance of the different mapping m
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.941     | 0.008   | 1.367  | 10.22     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.967     | 0.005   | 0.749  | 4.77      | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.970     | 0.004   | 0.712  | 5.009     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.970     | 0.004   | 0.712  | 5.009     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.967     | 0.005   | 0.749  | 4.77      | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **GRE** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.958     | 0.005   | 1.392  | 6.36      | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.956     | 0.006   | 1.177  | 5.64      | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.956     | 0.007   | 1.185  | 5.99      | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.956     | 0.007   | 1.185  | 5.99      | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.956     | 0.006   | 1.177  | 5.64      | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **MAD** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.952     | 0.006   | 1.229  | 4.4       | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.950     | 0.010   | 1.128  | 5.674     | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.949     | 0.011   | 1.138  | 6.935     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.949     | 0.011   | 1.138  | 6.935     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.950     | 0.010   | 1.128  | 5.674     | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
 </details>
 
@@ -236,24 +236,24 @@ As we waim to evaluate the reconstruction performance of the different mapping m
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.926     | 0.007   | 1.425  | 8.15      | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.957     | 0.004   | 0.894  | 5.31      | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.957     | 0.005   | 0.913  | 5.69      | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.957     | 0.005   | 0.913  | 5.69      | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.957     | 0.004   | 0.894  | 5.31      | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **GRE** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.953     | 0.006   | 1.312  | 11.01     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.948     | 0.007   | 1.177  | 6.948     | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.948     | 0.007   | 1.177  | 7.268     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.948     | 0.007   | 1.177  | 7.268     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.948     | 0.007   | 1.177  | 6.948     | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **MAD** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.943     | 0.006   | 1.209  | 4.72      | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.942     | 0.007   | 1.041  | 5.39      | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.943     | 0.008   | 1.073  | 6.27      | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.943     | 0.008   | 1.073  | 6.27      | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.942     | 0.007   | 1.041  | 5.39      | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
 </details>
 
@@ -267,24 +267,24 @@ As we waim to evaluate the reconstruction performance of the different mapping m
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.921     | 0.011   | 1.324  | 10.44     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.955     | 0.006   | 0.911  | 5.74      | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.955     | 0.008   | 0.839  | 6.549     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.955     | 0.008   | 0.839  | 6.549     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.955     | 0.006   | 0.911  | 5.74      | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **GRE** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.958     | 0.002   | 1.269  | 12.24     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.956     | 0.002   | 0.964  |  5.257    | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.958     | 0.002   | 0.995  | 5.839     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.958     | 0.002   | 0.995  | 5.839     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.956     | 0.002   | 0.964  |  5.257    | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **MAD** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.951     | 0.003   | 1.138  | 17.65     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.952     | 0.003   | 0.97   |  5.742    | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.954     | 0.004   | 0.832  | 13.83     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.954     | 0.004   | 0.832  | 13.83     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.952     | 0.003   | 0.97   |  5.742    | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
 </details>
 
@@ -298,24 +298,24 @@ As we waim to evaluate the reconstruction performance of the different mapping m
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.923     | 0.007   | 1.575  | 10.04     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.956     | 0.004   | 0.929  | 5.56      | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.958     | 0.005   | 0.648  | 5.56      | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.958     | 0.005   | 0.648  | 5.56      | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.956     | 0.004   | 0.929  | 5.56      | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **GRE** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.963     | 0.002   | 1.227  | 13.09     | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.958     | 0.002   | 1.05   |  6.54     | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.961     | 0.003   | 1.061  | 9.484     | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.961     | 0.003   | 1.061  | 9.484     | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.958     | 0.002   | 1.05   |  6.54     | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
   **MAD** :
 
   | Method           | µ(RMSE)   | σ(RMSE) | λx (°) | λt (days) | Reference                |
   | ---------------- | --------- | ------- | ------ | --------- | ------------------------ |
   | MIOST            | 0.96      | 0.002   | 1.346  | 12.7      | eval_miost.ipynb         |
-  | 4DVarNet 1/8°    | 0.96      | 0.003   | 1.001  |  6.695    | eval_4dvarnet_1_8.ipynb  |
-  | 4DVarNet 1/20°   | 0.962     | 0.003   | 0.956  | 14.959    | eval_4dvarnet_1_20.ipynb |
+  | 4DVarNet 1/20° GF 7nad | 0.962     | 0.003   | 0.956  | 14.959    | eval_4dvarnet_1_20_GF_7nad.ipynb |
+  | 4DVarNet 1/8° GF 7nad  | 0.96      | 0.003   | 1.001  |  6.695    | eval_4dvarnet_1_8_GF_7nad.ipynb  |
 
 </details>
 
