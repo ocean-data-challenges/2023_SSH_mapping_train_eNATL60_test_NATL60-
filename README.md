@@ -1,5 +1,9 @@
 # 2023_SSH_mapping_train_eNATL60_test_NATL60
 
+> [!NOTE]
+> This repository is still under construction, changes are likely to occur.
+
+
 ## Motivation
 
 This datachallenge is based on the principle of the [SSH Mapping Data Challenge 2020a](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60). The aim is again to compare several methods for reconstructing sequences of Sea Surface Height (SSH) from partial satellite altimeter observations. As in the previous datachallenge, this datachallenge follows the framework of an OSSE (Observation System Simulation Experiment) where "Real" full SSH are from a numerical simulation with a realistic, high-resolution ocean circulation model: the reference simulation. However, this datachallenge proposes to use two separate reference simulations, each covering an entire year, whereas previous datachallenges only used a single simulation covering one year: a first simulation for training methods requiring learning from full SSH fields, and a second for evaluating different reconstruction methods over a full year. On the one hand, this approach enables a longer learning period: a whole year, whereas in previous data challenges, learning was limited to a few months to maintain an independent evaluation period within the same year. Secondly, SSH reconstructions can be validated on a full year of data, totally independent of the learning data, making it possible to study any seasonal effects in reconstruction performance.
@@ -48,43 +52,44 @@ As we waim to evaluate the reconstruction performance of the different mapping m
 Click on one of the period below to show the scores associated to each method on
 each region.
 
-The method name "**4DVarNet 1/20° GF 7nad**" means the model has been trained on the
-region GF at 1/20° resolution with 7 nadirs altimeters.
+In the tables below, denominations like "**4DVarNet-GF 1/20°**" mean the model was trained using the 4DVarNet method on the region of GF at a resolution of 1/20°.
+
+The considered metrics are:
+- µ(RMSE): average RMSE score (the closer to 1, the better)
+- σ(RMSE): standard deviation of the RMSE score;
+- λx (°): minimum spatial scale resolved (the closer to 0, the better);
+- λt (days): minimum temporal scale resolved (the closer to 0, the better).
 
 <details>
 
   <summary>Whole year</summary>
 
-### Evaluation of the mapping methods over the whole year for 3 domains : GF, GRE, MAD.
-  **GF**:
-
+  **Evaluation on GF**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.926   | 0.011   | 1.315  | 13.39     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.960   | 0.007   | 0.805  |  5.166    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.959   | 0.006   | 0.852  |  5.108    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.933   | 0.011   | 1.049  |  5.791    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.931   | 0.01    | 1.075  |  3.721    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.960   | 0.007   | 0.805  |  5.166    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.959   | 0.006   | 0.852  |  5.108    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.933   | 0.011   | 1.049  |  5.791    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.931   | 0.01    | 1.075  |  3.721    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **GRE** :
-
+  **Evaluation on GRE**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.956   | 0.006   | 1.112  | 15.5      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.954   | 0.008   | 1.029  |  6.579    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.953   | 0.007   | 1.038  |  5.644    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.972   | 0.005   | 0.804  |  2.62     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.964   | 0.006   | 0.891  |  3.312    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.954   | 0.008   | 1.029  |  6.579    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.953   | 0.007   | 1.038  |  5.644    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.972   | 0.005   | 0.804  |  2.62     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.964   | 0.006   | 0.891  |  3.312    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **MAD** :
-
+  **Evaluation on MAD**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.951   | 0.008   | 0.926  | 21.93     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.952   | 0.01    | 0.91   |  6.616    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.951   | 0.009   | 0.937  |  5.705    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.965   | 0.007   | 0.821  |  2.566    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.971   | 0.006   | 0.72   |  3.308    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.952   | 0.01    | 0.91   |  6.616    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.951   | 0.009   | 0.937  |  5.705    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.965   | 0.007   | 0.821  |  2.566    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.971   | 0.006   | 0.72   |  3.308    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
 </details>
 
@@ -92,36 +97,32 @@ region GF at 1/20° resolution with 7 nadirs altimeters.
 
   <summary>Mid Autumn</summary>
 
-### Evaluation of the mapping methods over the Mid Autumn period for 3 domains : GF, GRE, MAD.
-  **GF**:
-
+  **Evaluation on GF**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.941   | 0.008   | 1.367  | 10.22     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.970   | 0.004   | 0.712  | 5.009     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.967   | 0.005   | 0.749  | 4.77      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.944   | 0.01    | 1.179  | 7.952     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.945   | 0.006   | 1.345  | 9.438     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.970   | 0.004   | 0.712  | 5.009     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.967   | 0.005   | 0.749  | 4.77      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.944   | 0.01    | 1.179  | 7.952     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.945   | 0.006   | 1.345  | 9.438     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **GRE** :
-
+  **Evaluation on GRE**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.958   | 0.005   | 1.392  | 6.36      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.956   | 0.007   | 1.185  | 5.99      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.956   | 0.006   | 1.177  | 5.64      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.975   | 0.004   | 0.823  | 2.714     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.967   | 0.004   | 0.911  | 3.481     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.956   | 0.007   | 1.185  | 5.99      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.956   | 0.006   | 1.177  | 5.64      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.975   | 0.004   | 0.823  | 2.714     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.967   | 0.004   | 0.911  | 3.481     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **MAD** :
-
+  **Evaluation on MAD**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.952   | 0.006   | 1.229  | 4.4       | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.949   | 0.011   | 1.138  | 6.935     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.950   | 0.010   | 1.128  | 5.674     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.965   | 0.007   | 1.002  | 3.416     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.971   | 0.007   | 0.866  | 3.346     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.949   | 0.011   | 1.138  | 6.935     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.950   | 0.010   | 1.128  | 5.674     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.965   | 0.007   | 1.002  | 3.416     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.971   | 0.007   | 0.866  | 3.346     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
 </details>
 
@@ -129,36 +130,32 @@ region GF at 1/20° resolution with 7 nadirs altimeters.
 
   <summary>Mid Winter</summary>
 
-### Evaluation of the mapping methods over the Mid Winter period for 3 domains : GF, GRE, MAD.
-  **GF**:
-
+  **Evaluation on GF**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.926   | 0.007   | 1.425  | 8.15      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.957   | 0.005   | 0.913  | 5.69      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.957   | 0.004   | 0.894  | 5.31      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.934   | 0.008   | 1.172  | 7.15      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.931   | 0.008   | 1.342  | 6.878     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.957   | 0.005   | 0.913  | 5.69      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.957   | 0.004   | 0.894  | 5.31      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.934   | 0.008   | 1.172  | 7.15      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.931   | 0.008   | 1.342  | 6.878     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **GRE** :
-
+  **Evaluation on GRE**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.953   | 0.006   | 1.312  | 11.01     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.948   | 0.007   | 1.177  | 7.268     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.948   | 0.007   | 1.177  | 6.948     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.969   | 0.005   | 0.828  | 2.595     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.961   | 0.006   | 1.084  | 3.221     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.948   | 0.007   | 1.177  | 7.268     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.948   | 0.007   | 1.177  | 6.948     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.969   | 0.005   | 0.828  | 2.595     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.961   | 0.006   | 1.084  | 3.221     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **MAD** :
-
+  **Evaluation on MAD**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.943   | 0.006   | 1.209  | 4.72      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.943   | 0.008   | 1.073  | 6.27      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.942   | 0.007   | 1.041  | 5.39      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.959   | 0.005   | 0.876  | 2.861     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.966   | 0.005   | 0.807  | 3.759     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.943   | 0.008   | 1.073  | 6.27      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.942   | 0.007   | 1.041  | 5.39      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.959   | 0.005   | 0.876  | 2.861     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.966   | 0.005   | 0.807  | 3.759     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
 </details>
 
@@ -166,36 +163,32 @@ region GF at 1/20° resolution with 7 nadirs altimeters.
 
   <summary>Mid Spring</summary>
 
-### Evaluation of the mapping methods over the Mid Spring period for 3 domains : GF, GRE, MAD.
-  **GF**:
-
+  **Evaluation on GF**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.921   | 0.011   | 1.324  | 10.44     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.955   | 0.008   | 0.839  |  6.549    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.955   | 0.006   | 0.911  |  5.74     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.927   | 0.011   | 1.049  |  7.78     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.927   | 0.007   | 1.139  | 10.719    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.955   | 0.008   | 0.839  |  6.549    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.955   | 0.006   | 0.911  |  5.74     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.927   | 0.011   | 1.049  |  7.78     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.927   | 0.007   | 1.139  | 10.719    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **GRE** :
-
+  **Evaluation on GRE**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.958   | 0.002   | 1.269  | 12.24     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.958   | 0.002   | 0.995  | 5.839     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.956   | 0.002   | 0.964  | 5.257     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.974   | 0.002   | 0.775  | 2.612     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.967   | 0.002   | 0.964  | 3.321     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.958   | 0.002   | 0.995  | 5.839     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.956   | 0.002   | 0.964  | 5.257     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.974   | 0.002   | 0.775  | 2.612     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.967   | 0.002   | 0.964  | 3.321     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **MAD** :
-
+  **Evaluation on MAD**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.951   | 0.003   | 1.138  | 17.65     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.954   | 0.004   | 0.832  | 13.83     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.952   | 0.003   | 0.97   |  5.742    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.966   | 0.003   | 0.832  | 3.27      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.971   | 0.001   | 0.78   | 3.365     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.954   | 0.004   | 0.832  | 13.83     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.952   | 0.003   | 0.97   |  5.742    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.966   | 0.003   | 0.832  | 3.27      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.971   | 0.001   | 0.78   | 3.365     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
 </details>
 
@@ -203,44 +196,37 @@ region GF at 1/20° resolution with 7 nadirs altimeters.
 
   <summary>Mid Summer</summary>
 
-### Evaluation of the mapping methods over the Mid Summer period for 3 domains : GF, GRE, MAD.
-  **GF**:
-
+  **Evaluation on GF**:
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.923   | 0.007   | 1.575  | 10.04     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.958   | 0.005   | 0.648  | 5.56      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.956   | 0.004   | 0.929  | 5.56      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.928   | 0.007   | 0.937  | 8.723     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.923   | 0.006   | 1.066  | 10.076    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.958   | 0.005   | 0.648  | 5.56      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.956   | 0.004   | 0.929  | 5.56      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.928   | 0.007   | 0.937  | 8.723     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.923   | 0.006   | 1.066  | 10.076    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **GRE** :
+  **Evaluation on GRE**:
 
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.963   | 0.002   | 1.227  | 13.09     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.961   | 0.003   | 1.061  |  9.484    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.958   | 0.002   | 1.05   |  6.54     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.977   | 0.001   | 0.75   |  2.559    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.97    | 0.002   | 0.876  |  3.494    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.961   | 0.003   | 1.061  |  9.484    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.958   | 0.002   | 1.05   |  6.54     | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.977   | 0.001   | 0.75   |  2.559    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.97    | 0.002   | 0.876  |  3.494    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
-  **MAD** :
+  **Evaluation on MAD**:
 
   | Method                 | µ(RMSE) | σ(RMSE) | λx (°) | λt (days) | Reference |
   | ---------------------- | ------- | ------- | ------ | --------- | --------- |
   | MIOST                  | 0.96    | 0.002   | 1.346  | 12.7      | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_miost.ipynb) |
-  | 4DVarNet 1/20° GF 7nad | 0.962   | 0.003   | 0.956  | 14.959    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GF 7nad  | 0.96    | 0.003   | 1.001  |  6.695    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
-  | 4DVarNet 1/8° GRE 7nad | 0.97    | 0.004   | 0.961  |  3.909    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
-  | 4DVarNet 1/8° MAD 7nad | 0.977   | 0.002   | 0.782  |  3.668    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
+  | 4DVarNet-GF 1/20° | 0.962   | 0.003   | 0.956  | 14.959    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_20_GF_7nad.ipynb) |
+  | 4DVarNet-GF 1/8°  | 0.96    | 0.003   | 1.001  |  6.695    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GF_7nad.ipynb) |
+  | 4DVarNet-GRE 1/8° | 0.97    | 0.004   | 0.961  |  3.909    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_GRE_7nad.ipynb) |
+  | 4DVarNet-MAD 1/8° | 0.977   | 0.002   | 0.782  |  3.668    | [link](https://github.com/ocean-data-challenges/2023_SSH_mapping_train_eNATL60_test_NATL60-/blob/main/notebooks/eval_4dvarnet_1_8_MAD_7nad.ipynb) |
 
 </details>
 
-With:
-- µ(RMSE): average RMSE score;
-- σ(RMSE): standard deviation of the RMSE score;
-- λx: minimum spatial scale resolved;
-- λt: minimum temporal scale resolved.
 
 ## Data
 
